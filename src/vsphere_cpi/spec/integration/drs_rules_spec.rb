@@ -191,7 +191,7 @@ describe 'DRS rules', drs: true do
             cluster = first_vm_mob.resource_pool.parent
 
             # we've created one VM with the anti affinity rule. Now let's make one more for each host in the cluster.
-            (0...cluster.hosts.length).each {
+            (0...cluster.host.length).each {
               vm_ids << one_cluster_cpi.create_vm(
                 'agent-006',
                 @stemcell_id,
